@@ -1,7 +1,9 @@
 package com.xusm.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xusm.dto.ProductInfoDto;
 import com.xusm.service.ProductInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -9,6 +11,7 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.util.List;
 
+@Slf4j
 @SpringBootTest
 public class ProductInfoServiceImplTest {
     @Resource
@@ -66,5 +69,17 @@ public class ProductInfoServiceImplTest {
         for (ProductInfoDto productInfoDto : productInfoDtoList) {
             System.out.println(productInfoDto);
         }
+    }
+
+    @Test
+    public void test_queryProductInfoPage() {
+        IPage<ProductInfoDto> pageResult = productInfoService.queryProductInfoPage(2, 2);
+        long total = pageResult.getTotal();
+        long pages = pageResult.getPages();
+        long current = pageResult.getCurrent();
+        long size = pageResult.getSize();
+        List<ProductInfoDto> records = pageResult.getRecords();
+        log.info("page result: total={}, pages={}, current={}, size={}", total, pages, current, size);
+        System.out.println(records);
     }
 }

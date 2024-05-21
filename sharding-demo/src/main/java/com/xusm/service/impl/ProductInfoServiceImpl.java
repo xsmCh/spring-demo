@@ -1,5 +1,7 @@
 package com.xusm.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xusm.dto.ProductInfoDto;
 import com.xusm.entity.ProductDesc;
 import com.xusm.entity.ProductInfo;
@@ -25,6 +27,11 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public List<ProductInfoDto> queryAllProductInfoDto() {
         return productInfoMapper.queryAllProductInfoDto();
+    }
+
+    @Override
+    public IPage<ProductInfoDto> queryProductInfoPage(int pageIndex, int pageSize) {
+        return productInfoMapper.queryProductInfoPage(new Page<>(pageIndex, pageSize));
     }
 
     @Transactional
