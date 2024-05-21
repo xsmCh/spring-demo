@@ -1,7 +1,12 @@
 package com.xusm.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -9,72 +14,31 @@ import java.math.BigDecimal;
  * 商品基本信息
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @TableName("product_info")
 public class ProductInfo {
+    private static final long serialVersionUID = 1L;
+
+    @TableId("product_info_id")
     private Long productInfoId;
 
-    /**
-     * 所属店铺id
-     */
+    @TableField("store_info_id")
     private Long storeInfoId;
 
-    /**
-     * 商品名称
-     */
+    @TableField("product_name")
     private String productName;
 
-    /**
-     * 规格
-     */
+    @TableField("spec")
     private String spec;
 
-    /**
-     * 产地
-     */
+    @TableField("region_code")
     private String regionCode;
 
-
-    /**
-     * 商品价格
-     */
+    @TableField("price")
     private BigDecimal price;
 
-
-    /**
-     * 商品图片
-     */
+    @TableField("image_url")
     private String imageUrl;
-
-
-    ////////////////////////////////关联信息/////////////////////////////////////////
-
-    /**
-     * 商品描述
-     */
-    private String descript;
-
-
-    /**
-     * 产地名称
-     */
-    private String placeOfOrigin;
-
-
-    /**
-     * 店铺名称
-     */
-    private String storeName;
-
-    /**
-     * 店铺信誉等级
-     */
-    private int reputation;
-
-    /**
-     * 店铺所在地名称
-     */
-    private String storeRegionName;
-
-
-
 }
