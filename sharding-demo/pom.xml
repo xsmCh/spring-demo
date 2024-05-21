@@ -26,10 +26,21 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <!-- sharding -->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.shardingsphere</groupId>-->
+<!--      <artifactId>sharding-jdbc-spring-boot-starter</artifactId>-->
+<!--      <version>4.1.1</version>-->
+<!--    </dependency>-->
+    <!-- mybatis-plus -->
     <dependency>
-      <groupId>org.apache.shardingsphere</groupId>
-      <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-      <version>4.1.1</version>
+      <groupId>com.baomidou</groupId>
+      <artifactId>mybatis-plus-boot-starter</artifactId>
+      <version>3.4.1</version>
+    </dependency>
+    <!-- mysql -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
     </dependency>
     <!-- junit -->
     <dependency>
