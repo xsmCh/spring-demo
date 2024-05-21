@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.xusm.dto.ProductInfoDto;
 import com.xusm.service.ProductInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -60,7 +61,18 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void test_transactional() {
-
+        ProductInfoDto productInfoDto = ProductInfoDto.builder()
+                .storeInfoId(1L)
+                .productName("测试事务1")
+                .spec("大号")
+                .regionCode("410000")
+                .price(new BigDecimal(1))
+                .imageUrl("xxx")
+                .descript("测试事务")
+                .build();
+        Assertions.assertThrows(RuntimeException.class, ()-> {
+            productInfoService.addProductInfo(productInfoDto);
+        });
     }
 
     @Test

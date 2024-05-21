@@ -8,11 +8,14 @@ import com.xusm.entity.ProductInfo;
 import com.xusm.mapper.ProductDescMapper;
 import com.xusm.mapper.ProductInfoMapper;
 import com.xusm.service.ProductInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 
+@Slf4j
 @Service
 public class ProductInfoServiceImpl implements ProductInfoService {
     private final ProductInfoMapper productInfoMapper;
@@ -43,6 +46,11 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         productInfoMapper.insert(productInfo);
         // 构建产品详细信息
         ProductDesc productDesc = buildProductDesc(productInfo.getProductInfoId(), productInfoDto);
+        if (Objects.equals(productDesc.getDescript(), "测试事务")) {
+            int count = productInfoMapper.selectCount(null);
+            log.info("test transactional: count product info before rollback: {}", count);
+            throw new RuntimeException("测试事务打断");
+        }
         // 插入产品信息
         productDescMapper.insert(productDesc);
     }
