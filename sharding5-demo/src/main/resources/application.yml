@@ -15,10 +15,10 @@ sharding:
   file: sharding-jdbc.yaml
 
 # 数据库配置(sharding数据源)
-spring:
-  datasource:
-    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
-    url: jdbc:shardingsphere:classpath:${sharding.file}
+#spring:
+#  datasource:
+#    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+#    url: jdbc:shardingsphere:classpath:${sharding.file}
 
 # 打印sql
 mybatis-plus:
