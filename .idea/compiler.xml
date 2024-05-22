@@ -15,6 +15,8 @@
         <module name="curator-demo" />
         <module name="aaa-demo" />
         <module name="sharding5-demo" />
+        <module name="sharding4-demo" />
+        <module name="sharding5-starter-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -34,6 +36,7 @@
       <module name="sharding4-demo (1)" options="-parameters" />
       <module name="sharding4-demo (2)" options="-parameters" />
       <module name="sharding5-demo" options="-parameters" />
+      <module name="sharding5-starter-demo" options="-parameters" />
     </option>
   </component>
 </project>
