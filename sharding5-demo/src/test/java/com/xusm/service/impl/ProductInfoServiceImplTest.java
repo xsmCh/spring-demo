@@ -27,12 +27,12 @@ public class ProductInfoServiceImplTest {
         // 创建信息
         ProductInfoDto productInfoDto = ProductInfoDto.builder()
                 .storeInfoId(1L)
-                .productName("测试产品1")
+                .productName("sharding5-测试产品1")
                 .spec("大号")
                 .regionCode("110000")
                 .price(new BigDecimal(10))
                 .imageUrl("xxx")
-                .descript("特别好吃好吃好吃")
+                .descript("sharding5-特别好吃好吃好吃")
                 .build();
         productInfoService.addProductInfo(productInfoDto);
     }
@@ -48,12 +48,12 @@ public class ProductInfoServiceImplTest {
             // 创建信息
             ProductInfoDto productInfoDto = ProductInfoDto.builder()
                     .storeInfoId(i % 2L)
-                    .productName("测试产品" + i)
+                    .productName("sharding5-测试产品" + i)
                     .spec("大号")
                     .regionCode("110000")
                     .price(new BigDecimal(10))
                     .imageUrl("xxx")
-                    .descript("特别好吃好吃好吃" + i)
+                    .descript("sharding5-特别好吃好吃好吃" + i)
                     .build();
             productInfoService.addProductInfo(productInfoDto);
         }
@@ -63,12 +63,12 @@ public class ProductInfoServiceImplTest {
     public void test_transactional() {
         ProductInfoDto productInfoDto = ProductInfoDto.builder()
                 .storeInfoId(1L)
-                .productName("测试事务1")
+                .productName("sharding5-测试事务1")
                 .spec("大号")
                 .regionCode("410000")
                 .price(new BigDecimal(1))
                 .imageUrl("xxx")
-                .descript("测试事务")
+                .descript("sharding5-测试事务")
                 .build();
         Assertions.assertThrows(RuntimeException.class, ()-> {
             productInfoService.addProductInfo(productInfoDto);
