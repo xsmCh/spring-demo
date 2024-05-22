@@ -1,0 +1,79 @@
+dataSources:
+  m0:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://localhost:3306/store_db?useUnicode=true
+    username: root
+    password: root
+  m1:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://localhost:3306/product_db_1?useUnicode=true
+    username: root
+    password: root
+
+rules:
+  - !SHARDING
+    tables:
+      store_info:
+        actualDataNodes: m0.store_info
+        tableStrategy:
+          standard:
+            shardingColumn: id
+            shardingAlgorithmName: store_info_inline
+        keyGenerateStrategy:
+          column: id
+          keyGeneratorName: snowflake
+      product_info:
+        actualDataNodes: m${1}.product_info_${1..2}
+        tableStrategy:
+          standard:
+            shardingColumn: product_info_id
+            shardingAlgorithmName: product_info_inline
+        keyGenerateStrategy:
+          column: product_info_id
+          keyGeneratorName: snowflake
+      product_descript:
+        actualDataNodes: m${1}.product_descript_${1..2}
+        tableStrategy:
+          standard:
+            shardingColumn: product_info_id
+            shardingAlgorithmName: product_descript_inline
+        keyGenerateStrategy:
+          column: id
+          keyGeneratorName: snowflake
+    bindingTables:
+      - product_info,product_descript
+    defaultDatabaseStrategy:
+      standard:
+        shardingColumn: store_info_id
+        shardingAlgorithmName: database_inline
+    defaultTableStrategy:
+      none:
+    shardingAlgorithms:
+      database_inline:
+        type: INLINE
+        props:
+          algorithm-expression: m$->{store_info_id % 2 + 1}
+      store_info_inline:
+        type: INLINE
+        props:
+          algorithm-expression: store_info
+      product_info_inline:
+        type: INLINE
+        props:
+          algorithm-expression: product_info_$->{product_info_id % 2 + 1}
+      product_descript_inline:
+        type: INLINE
+        props:
+          algorithm-expression: product_descript_$->{product_info_id % 2 + 1}
+    keyGenerators:
+      snowflake:
+        type: SNOWFLAKE
+
+  - !BROADCAST
+    tables:
+      - region
+
+props:
+  sql-show: true
