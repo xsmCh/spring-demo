@@ -27,7 +27,6 @@ public class DynamicDatasourceController {
 
     @GetMapping("/all")
     public Set<Object> allDatasource() {
-
         return DynamicRoutingDataSource.getTargetDataSources().keySet();
     }
 
@@ -50,7 +49,6 @@ public class DynamicDatasourceController {
 
         DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
         ds.setTargetDataSources(targetDataSources);
-        ds.afterPropertiesSet();
 
         return DynamicRoutingDataSource.getTargetDataSources().keySet();
     }
@@ -62,7 +60,6 @@ public class DynamicDatasourceController {
 
         DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
         ds.setTargetDataSources(targetDataSources);
-        ds.afterPropertiesSet();
 
         return DynamicRoutingDataSource.getTargetDataSources().keySet();
     }

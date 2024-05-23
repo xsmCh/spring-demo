@@ -8,3 +8,8 @@ spring:
         namespace: 95563041-f832-42bd-bfaf-9c13eaa56076
         username: nacos
         password: nacos
+
+dynamic:
+  config-file:
+    dataId: dynamic
+    group: DEFAULT_GROUP
