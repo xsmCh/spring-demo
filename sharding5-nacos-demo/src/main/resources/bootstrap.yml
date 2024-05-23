@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: sharding5-nacos-demo
+  profiles:
+    active: dev

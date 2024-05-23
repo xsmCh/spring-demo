@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      config:
+        server-addr: http://localhost:8848
+        namespace: 95563041-f832-42bd-bfaf-9c13eaa56076

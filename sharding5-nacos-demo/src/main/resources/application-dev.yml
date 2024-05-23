@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        watch:
+          enabled: true
+        server-addr: http://localhost:8848
+        namespace: 95563041-f832-42bd-bfaf-9c13eaa56076
+        username: nacos
+        password: nacos

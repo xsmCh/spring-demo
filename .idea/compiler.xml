@@ -12,10 +12,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sharding5-nacos-demo" />
         <module name="curator-demo" />
         <module name="aaa-demo" />
-        <module name="sharding5-demo" />
         <module name="sharding4-demo" />
+        <module name="sharding5-demo" />
         <module name="sharding5-starter-demo" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,8 @@
       <module name="sharding-demo" target="1.8" />
       <module name="sharding4-demo (1)" target="1.8" />
       <module name="sharding4-demo (2)" target="1.8" />
+      <module name="sharding5-demo (1)" target="1.8" />
+      <module name="sharding5-demo (2)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -36,6 +39,9 @@
       <module name="sharding4-demo (1)" options="-parameters" />
       <module name="sharding4-demo (2)" options="-parameters" />
       <module name="sharding5-demo" options="-parameters" />
+      <module name="sharding5-demo (1)" options="-parameters" />
+      <module name="sharding5-demo (2)" options="-parameters" />
+      <module name="sharding5-nacos-demo" options="-parameters" />
       <module name="sharding5-starter-demo" options="-parameters" />
     </option>
   </component>
