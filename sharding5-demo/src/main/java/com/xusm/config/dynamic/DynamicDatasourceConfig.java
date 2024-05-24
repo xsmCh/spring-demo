@@ -1,7 +1,6 @@
 package com.xusm.config.dynamic;
 
 import com.xusm.component.DynamicRoutingDataSource;
-import com.zaxxer.hikari.HikariDataSource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.driver.api.yaml.YamlShardingSphereDataSourceFactory;
 import org.apache.shardingsphere.driver.jdbc.core.driver.ShardingSphereURLManager;
@@ -33,22 +32,22 @@ public class DynamicDatasourceConfig {
         dynamicRoutingDataSource.setTargetDataSources(targetDataSources);
         dynamicRoutingDataSource.setDefaultTargetDataSource(dataSource1);
         // 设置当前数据源
-        DynamicRoutingDataSource.setDataSource("db2");
+        DynamicRoutingDataSource.setDataSource("db1");
         // 返回数据源
         return dynamicRoutingDataSource;
     }
 
-    public HikariDataSource database1() {
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/store_db?useUnicode=true");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root");
+    public DataSource database1() throws SQLException, IOException {
+        String url = "jdbc:shardingsphere:classpath:sharding-jdbc-single.yaml";
+        String urlPrefix = "jdbc:shardingsphere:";
+        log.info("start init sharding jdbc");
+        DataSource dataSource = YamlShardingSphereDataSourceFactory.createDataSource(ShardingSphereURLManager.getContent(url, urlPrefix));
+        log.info("end init sharding jdbc");
         return dataSource;
     }
 
     public DataSource database2() throws SQLException, IOException {
-            String url = "jdbc:shardingsphere:classpath:sharding-jdbc-m1.yaml";
+        String url = "jdbc:shardingsphere:classpath:sharding-jdbc-m1.yaml";
         String urlPrefix = "jdbc:shardingsphere:";
         log.info("start init sharding jdbc");
         DataSource dataSource = YamlShardingSphereDataSourceFactory.createDataSource(ShardingSphereURLManager.getContent(url, urlPrefix));

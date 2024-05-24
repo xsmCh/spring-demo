@@ -1,0 +1,20 @@
+dataSources:
+  m0:
+    dataSourceClassName: com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    jdbcUrl: jdbc:mysql://localhost:3306/store_db?useUnicode=true
+    username: root
+    password: root
+
+rules:
+  - !SHARDING
+    tables:
+      store_info:
+        actualDataNodes: m0.store_info
+    defaultDatabaseStrategy:
+      none:
+    defaultTableStrategy:
+      none:
+
+props:
+  sql-show: true
