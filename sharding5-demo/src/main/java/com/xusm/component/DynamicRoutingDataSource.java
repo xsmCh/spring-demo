@@ -6,6 +6,12 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
 import java.util.Map;
 
+/**
+ * AbstractRoutingDataSource的用法
+ * 1）设置targetDataSources，作为数据库信息
+ * 2）执行afterPropertiesSet，将targetDataSources的数据解析到resolvedDataSources中
+ * 3）resolvedDataSources中的数据源才是会被动态路由的数据源
+ */
 @Slf4j
 public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
     // 保存数据源的上下文，使用 ThreadLocal 确保线程安全
