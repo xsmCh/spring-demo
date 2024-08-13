@@ -5,18 +5,36 @@ dataSources:
     jdbcUrl: jdbc:mysql://localhost:3306/store_db?useUnicode=true
     username: root
     password: root
+    # 线程池设置
+    maximum-pool-size: 10
+    minimum-idle: 5
+    idle-timeout: 30000
+    connection-timeout: 30000
+    max-lifetime: 1800000
   m1:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     jdbcUrl: jdbc:mysql://localhost:3306/product_db_1?useUnicode=true
     username: root
     password: root
+    # 线程池设置
+    maximum-pool-size: 10
+    minimum-idle: 5
+    idle-timeout: 30000
+    connection-timeout: 30000
+    max-lifetime: 1800000
   m2:
     dataSourceClassName: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     jdbcUrl: jdbc:mysql://localhost:3306/product_db_2?useUnicode=true
     username: root
     password: root
+    # 线程池设置
+    maximum-pool-size: 10
+    minimum-idle: 5
+    idle-timeout: 30000
+    connection-timeout: 30000
+    max-lifetime: 1800000
 
 rules:
   - !SHARDING
