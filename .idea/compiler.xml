@@ -18,6 +18,7 @@
         <module name="sharding4-demo" />
         <module name="sharding5-demo" />
         <module name="sharding5-starter-demo" />
+        <module name="selenium-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -38,6 +39,7 @@
       <module name="aaa-demo (1)" options="-parameters" />
       <module name="aaa-demo (2)" options="-parameters" />
       <module name="curator-demo" options="-parameters" />
+      <module name="selenium-demo" options="-parameters" />
       <module name="sharding-demo" options="-parameters" />
       <module name="sharding4-demo" options="-parameters" />
       <module name="sharding4-demo (1)" options="-parameters" />
