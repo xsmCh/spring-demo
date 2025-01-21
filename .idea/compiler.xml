@@ -21,6 +21,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aaa-demo (1)" target="1.8" />
+      <module name="aaa-demo (2)" target="1.8" />
       <module name="curator" target="1.5" />
       <module name="demo" target="1.5" />
       <module name="sharding-demo" target="1.8" />
@@ -33,6 +35,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aaa-demo" options="-parameters" />
+      <module name="aaa-demo (1)" options="-parameters" />
+      <module name="aaa-demo (2)" options="-parameters" />
       <module name="curator-demo" options="-parameters" />
       <module name="sharding-demo" options="-parameters" />
       <module name="sharding4-demo" options="-parameters" />

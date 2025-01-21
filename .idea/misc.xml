@@ -13,7 +13,13 @@
         <option value="$PROJECT_DIR$/sharding5-demo/pom.xml" />
         <option value="$PROJECT_DIR$/sharding5-starter-demo/pom.xml" />
         <option value="$PROJECT_DIR$/sharding5-nacos-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/selenium-demo/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/selenium-demo/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
