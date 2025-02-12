@@ -28,7 +28,7 @@ public class ChromeDriverRunner {
      */
     public void execute() {
         // 初始化浏览器
-        ChromeDriver driver = ChromeDriverUtils.getChromeDriver(false);
+        ChromeDriver driver = ChromeDriverUtils.createChromeDriver(false);
         // 执行操作
         runnable.execute(driver);
         // 关闭浏览器
