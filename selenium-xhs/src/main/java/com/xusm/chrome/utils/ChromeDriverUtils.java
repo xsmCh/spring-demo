@@ -1,7 +1,6 @@
-package com.xusm.chrome;
+package com.xusm.chrome.utils;
 
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -39,7 +38,7 @@ public class ChromeDriverUtils {
      * @param debuggerAddress 调试地址（先手动启动浏览器）
      * @return 谷歌浏览器驱动
      */
-    public static WebDriver attachWebDriver(String debuggerAddress) {
+    public static ChromeDriver attachWebDriver(String debuggerAddress) {
         // 手动设置 ChromeDriver 路径
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         System.setProperty("webdriver.chrome.driver", "D:\\Development\\chrome\\chromedriver-win64\\chromedriver.exe"); // 或者 "C:/chromedriver.exe"

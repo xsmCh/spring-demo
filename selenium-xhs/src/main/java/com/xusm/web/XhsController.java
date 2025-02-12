@@ -13,8 +13,8 @@ public class XhsController {
     @Resource
     private XhsService xhsService;
 
-    @GetMapping("/login")
-    public String login() {
-        return xhsService.login();
+    @GetMapping("/open")
+    public String open() {
+        return xhsService.open();
     }
 }

@@ -1,5 +1,6 @@
-package com.xusm.chrome;
+package com.xusm.chrome.runner;
 
+import com.xusm.chrome.utils.ChromeDriverUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,16 +9,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
  *
  */
 @Slf4j
-public class ChromeDriverRunner {
+public class CreateChromeDriverRunner implements ChromeDriverRunner {
     private final boolean quit;
 
     private final ChromeDriverRunnable runnable;
 
-    public ChromeDriverRunner(ChromeDriverRunnable runnable) {
+    public CreateChromeDriverRunner(ChromeDriverRunnable runnable) {
         this(true, runnable);
     }
 
-    public ChromeDriverRunner(boolean quit, ChromeDriverRunnable runnable) {
+    public CreateChromeDriverRunner(boolean quit, ChromeDriverRunnable runnable) {
         this.quit = quit;
         this.runnable = runnable;
     }

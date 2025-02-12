@@ -1,6 +1,6 @@
 package com.xusm.service.impl;
 
-import com.xusm.chrome.ChromeDriverRunner;
+import com.xusm.chrome.runner.CreateChromeDriverRunner;
 import com.xusm.service.GoogleService;
 import com.xusm.utils.SleepUtils;
 import org.openqa.selenium.By;
@@ -12,7 +12,7 @@ public class GoogleServiceImpl implements GoogleService {
     @Override
     public String googleSearch(String query) {
         // 同步执行
-        new ChromeDriverRunner(driver -> {
+        new CreateChromeDriverRunner(driver -> {
             // 打开 Google 页面
             driver.get("https://www.google.com");
             // 查找搜索框并输入搜索内容
