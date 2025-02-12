@@ -15,6 +15,7 @@
         <module name="sharding5-nacos-demo" />
         <module name="curator-demo" />
         <module name="aaa-demo" />
+        <module name="selenium-xhs" />
         <module name="sharding4-demo" />
         <module name="sharding5-demo" />
         <module name="sharding5-starter-demo" />
@@ -40,6 +41,7 @@
       <module name="aaa-demo (2)" options="-parameters" />
       <module name="curator-demo" options="-parameters" />
       <module name="selenium-demo" options="-parameters" />
+      <module name="selenium-xhs" options="-parameters" />
       <module name="sharding-demo" options="-parameters" />
       <module name="sharding4-demo" options="-parameters" />
       <module name="sharding4-demo (1)" options="-parameters" />
