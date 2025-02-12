@@ -1,6 +1,5 @@
 package com.xusm.chrome;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,17 +9,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
  */
 @Slf4j
 public class ChromeDriverRunner {
-    @Setter
-    private long sleepBeforeQuite;
+    private final boolean quit;
 
     private final ChromeDriverRunnable runnable;
 
     public ChromeDriverRunner(ChromeDriverRunnable runnable) {
-        this(1000L, runnable);
+        this(true, runnable);
     }
 
-    public ChromeDriverRunner(long sleepBeforeQuite, ChromeDriverRunnable runnable) {
-        this.sleepBeforeQuite = sleepBeforeQuite;
+    public ChromeDriverRunner(boolean quit, ChromeDriverRunnable runnable) {
+        this.quit = quit;
         this.runnable = runnable;
     }
 
@@ -33,17 +31,9 @@ public class ChromeDriverRunner {
         ChromeDriver driver = ChromeDriverUtils.getChromeDriver(false);
         // 执行操作
         runnable.execute(driver);
-        // 关闭前睡眠
-        sleep();
         // 关闭浏览器
-        driver.quit();
-    }
-
-    private void sleep() {
-        try {
-            Thread.sleep(sleepBeforeQuite);
-        } catch (InterruptedException e) {
-            log.info("sleep interrupted", e);
+        if (quit) {
+            driver.quit();
         }
     }
 }
