@@ -3,9 +3,16 @@ package com.xusm.service;
 public interface XhsService {
 
     /**
-     * 小红书登录
+     * 打开explore页
      *
-     * @return 登录响应
+     * @return 响应
      */
     String explore();
+
+    /**
+     * 解析explore页node-item
+     *
+     * @return 响应
+     */
+    String parseExploreNoteItem();
 }

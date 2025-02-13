@@ -13,8 +13,23 @@ public class XhsController {
     @Resource
     private XhsService xhsService;
 
+    /**
+     * 打开explore页
+     *
+     * @return 响应
+     */
     @GetMapping("/explore")
     public String explore() {
         return xhsService.explore();
+    }
+
+    /**
+     * 解析explore页node-item
+     *
+     * @return 响应
+     */
+    @GetMapping("/parseExploreNoteItem")
+    public String parseExploreNoteItem() {
+        return xhsService.parseExploreNoteItem();
     }
 }
