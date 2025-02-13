@@ -8,14 +8,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 public class GoogleSearchTest {
     @Test
-    public void test_open_debug_chrome() throws IOException {
+    public void test_open_debug_chrome() {
         ChromeUtils.openDebugChrome();
     }
 
