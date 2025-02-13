@@ -1,6 +1,7 @@
 package com.xusm.selenium;
 
-import com.xusm.chrome.utils.ChromeDriverUtils;
+import com.xusm.chrome.ChromeDriverUtils;
+import com.xusm.chrome.ChromeUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -15,18 +16,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class GoogleSearchTest {
     @Test
     public void test_open_debug_chrome() throws IOException {
-        ProcessBuilder builder = new ProcessBuilder("\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
-                "--remote-debugging-port=9222",
-                "--user-data-dir=\"D:\\tmp\\chrome\\chrome-profile\"");
-        builder.redirectErrorStream(true);
-        builder.start();
+        ChromeUtils.openDebugChrome();
     }
 
     // 但是无头模式不行
     @Test
     public void testGoogleSearch_newWebDriver() {
         // 初始化浏览器驱动
-        WebDriver driver = ChromeDriverUtils.createChromeDriver(false);
+        WebDriver driver = ChromeDriverUtils.createChromeDriver();
         // 打开 Google 页面
         driver.get("https://www.google.com");
         // 查找搜索框并输入搜索内容
@@ -43,7 +40,7 @@ public class GoogleSearchTest {
     @Test
     public void testGoogleSearch_attachWebDriver() {
         // 初始化浏览器驱动
-        WebDriver driver = ChromeDriverUtils.attachWebDriver("localhost:9222");
+        WebDriver driver = ChromeDriverUtils.attachWebDriver();
         // 打开 Google 页面
         driver.get("https://www.google.com");
         // 查找搜索框并输入搜索内容

@@ -1,4 +1,4 @@
-package com.xusm.chrome.runner;
+package com.xusm.chrome;
 
 /**
  * Chrome驱动执行器

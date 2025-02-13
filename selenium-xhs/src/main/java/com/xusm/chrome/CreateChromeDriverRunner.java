@@ -1,6 +1,5 @@
-package com.xusm.chrome.runner;
+package com.xusm.chrome;
 
-import com.xusm.chrome.utils.ChromeDriverUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -29,7 +28,7 @@ public class CreateChromeDriverRunner implements ChromeDriverRunner {
      */
     public void execute() {
         // 初始化浏览器
-        ChromeDriver driver = ChromeDriverUtils.createChromeDriver(false);
+        ChromeDriver driver = ChromeDriverUtils.createChromeDriver();
         // 执行操作
         runnable.execute(driver);
         // 关闭浏览器

@@ -1,4 +1,4 @@
-package com.xusm.chrome.runner;
+package com.xusm.chrome;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 

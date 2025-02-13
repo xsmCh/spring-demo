@@ -1,6 +1,6 @@
 package com.xusm.service.impl;
 
-import com.xusm.chrome.runner.AttachChromeDriverRunner;
+import com.xusm.chrome.AttachChromeDriverRunner;
 import com.xusm.service.XhsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class XhsServiceImpl implements XhsService {
     @Override
     public String explore() {
         // 同步执行
-        new AttachChromeDriverRunner(debuggerAddress, driver -> {
+        new AttachChromeDriverRunner(driver -> {
             driver.get("https://www.xiaohongshu.com/explore");
         }).execute();
         // 响应
