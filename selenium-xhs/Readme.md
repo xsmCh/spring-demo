@@ -11,12 +11,12 @@
 1）启动 Chrome 并开启远程调试端口
 
 ```bat
-chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\selenium\chrome-profile"
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="D:\tmp\chrome\chrome-profile"
 ```
 
-- 可以先cd到chrome安装路径下
+- 如果启动chrome浏览器的路径有空格，用引号引起来
 - `--remote-debugging-port=9222`：开启调试端口
-- `--user-data-dir="C:\selenium\chrome-profile"`：设置一个新的浏览器用户数据目录，这样浏览器就与日常使用的浏览器区别开了
+- `--user-data-dir="D:\tmp\chrome\chrome-profile"`：设置一个新的浏览器用户数据目录，这样浏览器就与日常使用的浏览器区别开了
 
 2）附着启动
 

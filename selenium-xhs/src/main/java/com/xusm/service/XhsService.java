@@ -7,5 +7,5 @@ public interface XhsService {
      *
      * @return 登录响应
      */
-    String open();
+    String explore();
 }

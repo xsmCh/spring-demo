@@ -7,10 +7,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Slf4j
 public class GoogleSearchTest {
+    @Test
+    public void test_open_debug_chrome() throws IOException {
+        ProcessBuilder builder = new ProcessBuilder("\"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\"",
+                "--remote-debugging-port=9222",
+                "--user-data-dir=\"D:\\tmp\\chrome\\chrome-profile\"");
+        builder.redirectErrorStream(true);
+        builder.start();
+    }
 
     // 但是无头模式不行
     @Test

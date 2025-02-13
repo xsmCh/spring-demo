@@ -2,7 +2,7 @@ package com.xusm.service.impl;
 
 import com.xusm.chrome.runner.CreateChromeDriverRunner;
 import com.xusm.service.GoogleService;
-import com.xusm.utils.SleepUtils;
+import com.xusm.chrome.utils.SleepUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Service;

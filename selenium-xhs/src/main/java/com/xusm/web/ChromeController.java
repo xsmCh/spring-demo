@@ -1,6 +1,6 @@
 package com.xusm.web;
 
-import com.xusm.service.XhsService;
+import com.xusm.service.ChromeService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/xhs")
-public class XhsController {
+@RequestMapping("/chrome")
+public class ChromeController {
     @Resource
-    private XhsService xhsService;
+    private ChromeService chromeService;
 
-    @GetMapping("/explore")
-    public String explore() {
-        return xhsService.explore();
+    @GetMapping("/openDebugChrome")
+    public void open() {
+        chromeService.openDebugChrome();
     }
 }

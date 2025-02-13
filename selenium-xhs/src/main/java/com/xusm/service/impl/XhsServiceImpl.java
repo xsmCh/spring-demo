@@ -11,7 +11,7 @@ public class XhsServiceImpl implements XhsService {
     private String debuggerAddress;
 
     @Override
-    public String open() {
+    public String explore() {
         // 同步执行
         new AttachChromeDriverRunner(debuggerAddress, driver -> {
             driver.get("https://www.xiaohongshu.com/explore");

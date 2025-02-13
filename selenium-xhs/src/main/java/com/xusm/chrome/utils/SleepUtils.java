@@ -1,4 +1,4 @@
-package com.xusm.utils;
+package com.xusm.chrome.utils;
 
 import lombok.extern.slf4j.Slf4j;
 
