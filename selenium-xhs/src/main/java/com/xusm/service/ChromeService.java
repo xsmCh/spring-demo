@@ -6,4 +6,10 @@ public interface ChromeService {
      *
      */
     void openDebugChrome();
+
+    /**
+     * 使用DevTool
+     *
+     */
+    void useDevTools();
 }

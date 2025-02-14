@@ -17,13 +17,15 @@
         <module name="curator-demo" />
         <module name="aaa-demo" />
         <module name="selenium-xhs" />
-        <module name="selenium-maven" />
         <module name="sharding4-demo" />
         <module name="sharding5-demo" />
         <module name="sharding5-starter-demo" />
         <module name="selenium-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="selenium-maven" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

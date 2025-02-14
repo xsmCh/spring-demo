@@ -17,4 +17,9 @@ public class ChromeController {
     public void open() {
         chromeService.openDebugChrome();
     }
+
+    @GetMapping("/useDevTools")
+    public void useDevTools() {
+        chromeService.useDevTools();
+    }
 }
