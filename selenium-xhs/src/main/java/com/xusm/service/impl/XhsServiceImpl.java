@@ -1,6 +1,6 @@
 package com.xusm.service.impl;
 
-import com.xusm.chrome.AttachChromeDriverRunner;
+import com.xusm.chrome.runner.AttachChromeDriverRunner;
 import com.xusm.service.XhsService;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;

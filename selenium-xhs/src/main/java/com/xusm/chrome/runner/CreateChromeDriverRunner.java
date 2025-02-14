@@ -1,5 +1,6 @@
-package com.xusm.chrome;
+package com.xusm.chrome.runner;
 
+import com.xusm.chrome.ChromeDriverUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.chrome.ChromeDriver;
 
