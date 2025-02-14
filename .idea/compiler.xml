@@ -5,6 +5,7 @@
       <directory url="file://$PROJECT_DIR$/curator-demo/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/sharding4-demo/src/main/resources/archetype-resources" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/aaa-demo/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/selenium-maven/src/main/resources/archetype-resources" includeSubdirectories="true" />
     </excludeFromCompile>
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
@@ -16,39 +17,22 @@
         <module name="curator-demo" />
         <module name="aaa-demo" />
         <module name="selenium-xhs" />
+        <module name="selenium-maven" />
         <module name="sharding4-demo" />
         <module name="sharding5-demo" />
         <module name="sharding5-starter-demo" />
         <module name="selenium-demo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="aaa-demo (1)" target="1.8" />
-      <module name="aaa-demo (2)" target="1.8" />
-      <module name="curator" target="1.5" />
-      <module name="demo" target="1.5" />
-      <module name="sharding-demo" target="1.8" />
-      <module name="sharding4-demo (1)" target="1.8" />
-      <module name="sharding4-demo (2)" target="1.8" />
-      <module name="sharding5-demo (1)" target="1.8" />
-      <module name="sharding5-demo (2)" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="aaa-demo" options="-parameters" />
-      <module name="aaa-demo (1)" options="-parameters" />
-      <module name="aaa-demo (2)" options="-parameters" />
       <module name="curator-demo" options="-parameters" />
       <module name="selenium-demo" options="-parameters" />
       <module name="selenium-xhs" options="-parameters" />
-      <module name="sharding-demo" options="-parameters" />
       <module name="sharding4-demo" options="-parameters" />
-      <module name="sharding4-demo (1)" options="-parameters" />
-      <module name="sharding4-demo (2)" options="-parameters" />
       <module name="sharding5-demo" options="-parameters" />
-      <module name="sharding5-demo (1)" options="-parameters" />
-      <module name="sharding5-demo (2)" options="-parameters" />
       <module name="sharding5-nacos-demo" options="-parameters" />
       <module name="sharding5-starter-demo" options="-parameters" />
     </option>

@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/sharding5-nacos-demo/pom.xml" />
         <option value="$PROJECT_DIR$/selenium-demo/pom.xml" />
         <option value="$PROJECT_DIR$/selenium-xhs/pom.xml" />
+        <option value="$PROJECT_DIR$/selenium-maven/pom.xml" />
       </list>
     </option>
   </component>
